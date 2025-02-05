@@ -43,9 +43,7 @@ This process allows the algorithm to distinguish between constant and balanced f
 
 The algorithm is implemented using **Qiskit**, a quantum computing framework, which allows us to simulate quantum circuits and execute quantum algorithms.
 
-# Deutsch-Jozsa Algorithm: Query Complexity
-
-## Overview
+## Deutsch-Jozsa Algorithm: Query Complexity
 
 In the context of the **Deutsch-Jozsa problem**, we aim to determine whether a given function \( f: \{0, 1\}^n \to \{0, 1\} \) is **constant** or **balanced** with the fewest queries to an oracle. The complexity of solving this problem is measured in terms of **query complexity**, which refers to the number of queries needed to determine the function type in the worst-case scenario. In this problem, we focus on minimizing the number of queries to the oracle, as all other computational steps (like preprocessing and postprocessing) are considered negligible.
 
