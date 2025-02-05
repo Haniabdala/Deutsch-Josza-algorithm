@@ -1,12 +1,14 @@
 # Deutsch’s Algorithm
 ## Deutsch’s problem
-Let f : {0, 1} → {0, 1} be a one bit Boolean function25. There exists only four different functions
-mapping bits to bits:
+Let f : {0, 1} → {0, 1} be a one bit Boolean function. There exists only four different functions mapping bits to bits:
+
 f0(0) = 0, f0(1) = 0 f1(0) = 0, f1(1) = 1 (287)
 f2(0) = 1, f2(1) = 0 f3(0) = 1, f3(1) = 1 (288)
-Notice that, although bit-to-bit functions are “simple”, they might be very hard to compute. For
-instance, consider the function f : {0, 1} → {0, 1} defined by
-• f(0) = 1 if the Goldbach conjecture26 is true and f(0) = 0 otherwise.
+
+Notice that, although bit-to-bit functions are “simple”, they might be very hard to compute. For instance, consider the function f : {0, 1} → {0, 1} defined by: 
+
+• f(0) = 1 if the Goldbach conjecture. 
+26 is true and f(0) = 0 otherwise.
 25A Boolean function is a function which transforms n bits into a single bit. That is, an arbitrary function
 f : {0, 1}
 n → {0, 1}.
