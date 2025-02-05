@@ -2,7 +2,7 @@
 ## Deutsch’s problem
 Let f : {0, 1} → {0, 1} be a one bit Boolean function. There exists only four different functions mapping bits to bits:
 
-![Alt text](iamges/function.png)
+![Alt text](images/function.png)
 
 Notice that, although bit-to-bit functions are “simple”, they might be very hard to compute.
 
