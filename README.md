@@ -94,4 +94,3 @@ The **Deutsch-Jozsa algorithm** leverages quantum superposition and interference
 - Finally, a measurement is performed on the first \( n \) qubits. If the result is \( 0 \), the function is constant; if the result is \( 1 \), the function is balanced.
 
 With this quantum approach, we only need to make **one query** to the oracle to determine whether the function is constant or balanced, offering an **exponential speedup** over the classical method.
-
