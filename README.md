@@ -78,3 +78,58 @@ This process allows the algorithm to distinguish between constant and balanced f
 ## Code Implementation
 
 The algorithm is implemented using **Qiskit**, a quantum computing framework, which allows us to simulate quantum circuits and execute quantum algorithms.
+
+# Deutsch-Jozsa Algorithm: Query Complexity
+
+## Overview
+
+In the context of the **Deutsch-Jozsa problem**, we aim to determine whether a given function \( f: \{0, 1\}^n \to \{0, 1\} \) is **constant** or **balanced** with the fewest queries to an oracle. The complexity of solving this problem is measured in terms of **query complexity**, which refers to the number of queries needed to determine the function type in the worst-case scenario. In this problem, we focus on minimizing the number of queries to the oracle, as all other computational steps (like preprocessing and postprocessing) are considered negligible.
+
+This problem highlights how quantum computing can drastically reduce the number of queries needed compared to classical approaches.
+
+## Query Complexity Analogy
+
+Imagine an oracle as a **wise sage** perched atop a **high mountain**. Every time you need to ask a question, you must hike up the mountain to inquire. Since the journey to the top is difficult and time-consuming, it’s essential to minimize the number of trips to the oracle. Each time you ask a question (a query), it counts as one journey, so the focus is on reducing the number of queries.
+
+The goal of the **Deutsch-Jozsa problem** is to figure out whether the function provided by the oracle is **constant** (always outputs the same value) or **balanced** (half of the inputs map to 0 and the other half to 1). We aim to minimize the number of queries to figure this out, ensuring that we don’t waste unnecessary trips.
+
+## Classical Query Complexity
+
+In the **classical case**, the oracle takes an input \( i \in \{0, 1\}^n \) and outputs \( f(i) \in \{0, 1\} \). The task is to determine whether the function \( f \) is constant or balanced by making a series of queries.
+
+Here’s how the classical approach works:
+
+- If we query the oracle once, say by checking \( f(0) \), we can't be sure if the function is constant or balanced. A single query only provides information about one input.
+  
+- If we query the oracle twice, checking both \( f(0) \) and \( f(1) \), we can determine whether the function is constant or balanced:
+  - If \( f(0) = f(1) \), the function is **constant**.
+  - If \( f(0) \neq f(1) \), the function is **balanced**.
+
+Thus, the classical query complexity of the Deutsch-Jozsa problem is **two queries**. With these two queries, we can determine the nature of the function with certainty.
+
+### Classical Example
+
+Let’s consider an example with \( n = 1 \):
+- We have the oracle that either implements a constant or balanced function.
+- We query the oracle twice, once with \( f(0) \) and once with \( f(1) \):
+  - If the answers are the same (both 0 or both 1), the function is constant.
+  - If the answers differ (one is 0, the other is 1), the function is balanced.
+
+This method requires a minimum of two queries to guarantee the correct determination.
+
+## Quantum Advantage
+
+The **quantum approach** offers a **significant speedup** over the classical method. Instead of querying the oracle multiple times, **quantum computing** enables us to determine whether the function is constant or balanced with just **one query**.
+
+### Quantum Query Complexity
+
+The **Deutsch-Jozsa algorithm** leverages quantum superposition and interference to solve the problem efficiently. Here’s how it works:
+
+- A quantum circuit is initialized with \( n + 1 \) qubits. The first \( n \) qubits represent the function's input, and the last qubit is an auxiliary qubit.
+- We apply a **Hadamard transform** to all qubits to create a superposition of all possible inputs.
+- The oracle is applied, encoding the function \( f \) into the quantum state.
+- A second **Hadamard transform** is applied to the first \( n \) qubits, creating interference patterns based on the outputs of the function.
+- Finally, a measurement is performed on the first \( n \) qubits. If the result is \( 0 \), the function is constant; if the result is \( 1 \), the function is balanced.
+
+With this quantum approach, we only need to make **one query** to the oracle to determine whether the function is constant or balanced, offering an **exponential speedup** over the classical method.
+
