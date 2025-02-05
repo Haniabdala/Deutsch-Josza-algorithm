@@ -6,24 +6,34 @@ Let f : {0, 1} → {0, 1} be a one bit Boolean function. There exists only four 
 
 Notice that, although bit-to-bit functions are “simple”, they might be very hard to compute.
 
-Deutsch’s problem is then defined as following: given an oracle to computes a function f :
-{0, 1} → {0, 1}, is the function f constant, or balanced ? A function is constant when f(0) = f(1),
-and a bit-to-bit function is balanced if f(0) ̸= f(1). From Eq. (287) we can see that f0 and f3
-are constant, and f1 and f2 are balanced. The complexity for solving Deutsch’s problem will be
-quantified by how many queries to the oracle are required to solve it in the worst case. This
-approach to complexity is called query complexity, and will be discussed in more generality later.
-For now, we may imagine that querying the oracle is something expensive, and the only complexity
-for solving the problem is given by how many times we need to access this oracle, all other steps
-are viewed as cheap, hence with negligible complexity. One popular analogy for the oracle could be
-an old wise mage on the top of a high mountain, which allows us to ask a single question each time
-we hike the mountain. For each query to the oracle, we need to complete a full hike. Since this
-hike is very hard, all the effort of pre-processing and post-processing is negligible when compared
-to this long hike.
+# **Deutsch's Problem and Query Complexity**  
 
-We now return to Deutsch’s problem. If we are given an oracle that takes i ∈ {0, 1} as
-inputs and outputs f(i) ∈ {0, 1}. How many queries we need to ensure that the Boolean function
-f : {0, 1} → {0, 1} is constant or balanced? Well, if we know the value of the function for one
-bit, we have no idea if the function is constant or balanced. If the oracle tells us that f(0) = 0,
-we still have no idea whether f is constant or balanced. The only way to solve this problem is by
-querying the oracle twice, so that we know the value of f(0) and f(1). Hence, the (classical) query
-complexity of Deutsch’s problem is two.
+## **Overview**  
+Deutsch's problem is a fundamental problem in quantum computing, formulated as follows:  
+
+> Given an oracle that computes a function **f: {0,1} → {0,1}**, determine whether the function is **constant** or **balanced**.  
+
+- A **constant function** satisfies **f(0) = f(1)**.  
+- A **balanced function** satisfies **f(0) ≠ f(1)**.  
+
+From mathematical analysis, we observe that certain functions (e.g., **f₀ and f₃**) are constant, while others (**f₁ and f₂**) are balanced.  
+
+## **Query Complexity**  
+The complexity of solving Deutsch’s problem is measured in terms of the **number of queries** required to the oracle in the **worst-case scenario**. This is known as **query complexity**.  
+
+Imagine an oracle as an **old wise sage on top of a high mountain**. Each time we seek an answer, we must hike up the mountain to ask a single question. Since this journey is extremely difficult, the focus is on minimizing the number of queries, as any pre-processing or post-processing steps are considered negligible in comparison.  
+
+### **Classical Query Complexity**  
+If we are given an oracle that takes **i ∈ {0,1}** as input and outputs **f(i) ∈ {0,1}**, how many queries do we need to determine whether **f** is constant or balanced?  
+
+1. If we only query the oracle once (e.g., checking **f(0)**), we **cannot** determine whether the function is constant or balanced.
+2. To be certain, we must **query twice** (checking both **f(0) and f(1)**). If **f(0) = f(1)**, the function is constant; otherwise, it is balanced.  
+
+Thus, the **classical query complexity of Deutsch’s problem is two**.  
+
+## **Quantum Advantage**  
+Using **quantum computing**, Deutsch’s problem can be solved with just **one query** instead of two. This is achieved through quantum superposition and interference, forming the basis for the **Deutsch-Josza algorithm**, which extends this concept to more complex functions.  
+
+---  
+This repository contains an **implementation of Deutsch’s algorithm using Qiskit**, demonstrating the power of quantum computing in reducing query complexity.  
+
