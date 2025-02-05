@@ -1,12 +1,10 @@
 # Deutsch’s Algorithm
-## Deutsch’s problem
+## **Deutsch's Problem and Query Complexity**  
 Let f : {0, 1} → {0, 1} be a one bit Boolean function. There exists only four different functions mapping bits to bits:
 
 ![Alt text](images/function.png)
 
 Notice that, although bit-to-bit functions are “simple”, they might be very hard to compute.
-
-# **Deutsch's Problem and Query Complexity**  
 
 ## **Overview**  
 Deutsch's problem is a fundamental problem in quantum computing, formulated as follows:  
